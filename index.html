@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Калькулятор платежей</title>
+    <link rel="stylesheet" href="./src/css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="calc">
+            <div class="calc__data">
+                <h2 class="calc__header">Информация о кредите</h2>
+                <form class="credit-data" action="/" method="post">
+                    <div class="credit-data__line">
+                        <label for="credit-sum">Сумма кредита</label>
+                        <input id="credit-sum" type="number" min="0" step=".01" name="credit-sum" required>
+                    </div>
+                    <div class="credit-data__line">
+                        <label for="credit-percent">Процент</label>
+                        <input id="credit-percent" type="number" min="0" step=".01" name="credit-procent" required>
+                    </div>
+                    <div class="credit-data__line">
+                        <label for="credit-period">Срок кредита (мес.)</label>
+                        <input id="credit-period" type="number" min="0" name="credit-period" required>
+                    </div>
+                    <div class="credit-data__line">
+                        <label for="data-submit" class="credit-data__important">Рассчитать кредит</label>
+                        <input id="data-submit" class="credit-data__btn" type="submit" value="Рассчитать">
+                    </div>
+                </form>
+                <div class="credit-result">
+                    <div class="credit-result__line">
+                        <span class="credit-data__key">Ежемесячный платеж</span>
+                        <span id="monthly-payment" class="credit-data__value"></span>
+                    </div>
+                    <div class="credit-result__line">
+                        <span class="credit-data__key">Общая сумма кредита</span>
+                        <span id="payment-sum" class="credit-data__value"></span>
+                    </div>
+                    <div class="credit-result__line">
+                        <span class="credit-data__key">Переплата</span>
+                        <span id="overpayments" class="credit-data__value"></span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="calc__graph">
+                <h2 class="calc__header">График расчета</h2>
+                <canvas id="graph"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="./dist/bundle.js"></script>
+</body>
+</html>
